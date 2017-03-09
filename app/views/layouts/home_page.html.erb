@@ -7,7 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>  
+
+  <body>
+    <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg); height: 500px; width: 100%; border: 1px solid black; background-size: 100% 100%;"> 
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -15,6 +18,9 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <%= yield %>  	
+    <%= yield %>
+
+    </div>
+  	
   </body>
 </html>
