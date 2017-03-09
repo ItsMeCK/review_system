@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :businessmen
   devise_for :reviewers
   devise_for :admins
+  root 'home#home_page'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
