@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: local_review_system
+  pool: 5
+  username: user
+  password: user1234
