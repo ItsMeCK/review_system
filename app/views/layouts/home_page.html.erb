@@ -11,8 +11,7 @@
   <body>
 
     <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; background-size: 100% 100%; "> 
-    
-<%= current_reviewer %>
+
 
     <%= if current_reviewer 
       button_to "Sign Out", destroy_reviewer_session_path ,method: 'delete', class: "btn btn-primary-outline1"
