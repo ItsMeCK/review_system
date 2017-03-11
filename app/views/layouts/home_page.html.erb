@@ -9,29 +9,26 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse bg-inverse">
-  <!-- Navbar content -->
-</nav>
 
-<nav class="navbar navbar-inverse bg-primary">
-  <!-- Navbar content -->
-</nav>
-
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <!-- Navbar content -->
-</nav>
-    <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ; background-repeat: no-repeat; height: 500px; width: 100%; border: 1px solid black; background-size: 100% 100%; "> 
+    <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; background-size: 100% 100%; "> 
     
+<%= current_reviewer %>
 
-     <%= button_to "Sign Up", new_reviewer_registration_path ,method: 'get', class: "btn btn-primary-outline1"%>
-     <%= button_to "Sign In", new_reviewer_session_path ,method: 'get', class: "btn btn-primary-outline1"%>
+    <%= if current_reviewer 
+      button_to "Sign Out", destroy_reviewer_session_path ,method: 'delete', class: "btn btn-primary-outline1"
+    else
+      button_to "Sign Up", new_reviewer_registration_path ,method: 'get', class: "btn btn-primary-outline1"
+    end  
+      %>
+     
+     <%= if current_reviewer 
+      button_to "#{current_reviewer.name || 'hiii'}", reviewer_path(current_reviewer) ,method: 'get', class: "btn btn-primary-outline2"
+    else
+      button_to "Sign In", new_reviewer_session_path ,method: 'get', class: "btn btn-primary-outline2"
+    end  
+      %>
 
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+     <%= %>
     
     <%= yield %>
 
@@ -45,10 +42,20 @@
   border-color: #FFFFFF;
   border-width: 2px;
   color: #FFFFFF;
- 
+ position: absolute;
+ right: 4px;
 
 }
 
-  </style>>
+.btn-primary-outline2 {
+  background-color: transparent;
+  border-width: 0px;
+  color: #FFFFFF;
+position: absolute;
+ right: 100px; 
+
 }
+
+  </style>
+
 </html>
