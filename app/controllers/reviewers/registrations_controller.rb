@@ -5,13 +5,11 @@ class Reviewers::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    puts "heree"
   end
 
   #POST /resource
   def create
-    puts super
-    puts "here"
+    super
   end
 
    private
