@@ -1,5 +1,5 @@
 class ReviewersController < ApplicationController
 	def show
-		@reviewer = Reviewer.find_by_id(params[:id])
+		@reviewer = current_reviewer
   	end
 end

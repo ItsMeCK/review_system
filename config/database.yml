@@ -3,6 +3,6 @@ development:
   encoding: unicode
   database: review_system
   pool: 5
-  username: postgres
-  password: root
+  username: user
+  password: user1234
   host: localhost

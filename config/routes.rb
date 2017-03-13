@@ -5,8 +5,14 @@ Rails.application.routes.draw do
            :sessions => "reviewers/sessions",
            :registrations => "reviewers/registrations" }
   devise_for :admins
+
+  authenticated :businessman do
+  	root to: "businessmen#show"
+	end 
   root 'home#home_page'
-    resources :reviewers
+  resources :reviewers
+
+ 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
