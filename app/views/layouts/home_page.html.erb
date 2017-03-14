@@ -9,42 +9,42 @@
   </head>
 
   <body>
+      <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; background-size: 100% 100%; "> 
 
-    <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; background-size: 100% 100%; "> 
 
+      <%= if current_reviewer 
+        button_to "Sign Out", destroy_reviewer_session_path ,method: 'delete', class: "btn btn-primary-outline1"
+      else
+        button_to "Sign Up", new_reviewer_registration_path ,method: 'get', class: "btn btn-primary-outline1"
+      end  
+        %>
+       
+       <%= if current_reviewer 
+        button_to "#{current_reviewer.name || 'hiii'}", reviewer_path(current_reviewer) ,method: 'get', class: "btn btn-primary-outline2"
+      else
+        button_to "Sign In", new_reviewer_session_path ,method: 'get', class: "btn btn-primary-outline2"
+      end  
+        %>
 
-    <%= if current_reviewer 
-      button_to "Sign Out", destroy_reviewer_session_path ,method: 'delete', class: "btn btn-primary-outline1"
-    else
-      button_to "Sign Up", new_reviewer_registration_path ,method: 'get', class: "btn btn-primary-outline1"
-    end  
-      %>
-     
-     <%= if current_reviewer 
-      button_to "#{current_reviewer.name || 'hiii'}", reviewer_path(current_reviewer) ,method: 'get', class: "btn btn-primary-outline2"
-    else
-      button_to "Sign In", new_reviewer_session_path ,method: 'get', class: "btn btn-primary-outline2"
-    end  
-      %>
+       <%= %>
+      
+      <%= yield %>
 
-     <%= %>
-    
-    <%= yield %>
+      </div>
 
-    </div>
+      <footer class="footer">
+        <small>
+          All Right Reserved!!!
+        </small>
+        <nav>
+          <ul>
+            <li><%= link_to "Be a Businessman",   new_businessman_registration_path %></li>
+            <li><%= link_to "Contact", '#' %></li>
+          </ul>
+        </nav>
+      </footer>
 
-    <footer class="footer">
-      <small>
-        All Right Reserved!!!
-      </small>
-      <nav>
-        <ul>
-          <li><%= link_to "Be a Businessman",   new_businessman_registration_path %></li>
-          <li><%= link_to "Contact", '#' %></li>
-        </ul>
-      </nav>
-    </footer>
-  	
+  
   </body>
   <style type="text/css">
     

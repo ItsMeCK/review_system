@@ -4,4 +4,5 @@ class HomeController < ApplicationController
 	def home_page
 		@current_u = current_reviewer
 	end	
+
 end
