@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   authenticated :businessman do
   	root to: "businessmen#show"
 	end 
+  
   root 'home#home_page'
   resources :reviewers
 
