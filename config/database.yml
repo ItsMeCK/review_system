@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: review_system
+  database: review_system2
   pool: 5
   username: user
   password: user1234

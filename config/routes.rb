@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :products
+
+
+  
   devise_for :businessmen, controllers: {
            :sessions => "businessmen/sessions",
            :registrations => "businessmen/registrations" }
@@ -15,6 +18,10 @@ Rails.application.routes.draw do
   root 'home#home_page'
   resources :reviewers
 
-  resources :businessmen
+  resources :businessmen do
+    resources :products
+  end
+  get '/quick_help' => 'businessmen#quick_help'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

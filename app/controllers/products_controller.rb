@@ -1,10 +1,19 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  layout :condition_find 
   # GET /products
   # GET /products.json
+  def condition_find
+    if current_businessman
+      return 'businessman'
+    else
+      return 'home_page'
+    end  
+  end  
+  
   def index
-    @products = Product.all
+    @products = Product.all || []
   end
 
   # GET /products/1
@@ -24,8 +33,9 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
-
+    @user = current_businessman || current_user
+    @product = @user.products.build(product_params)
+    
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
