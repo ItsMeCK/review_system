@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :phone
       t.string :city
       t.integer :product_type_id
-      t.string :image
+      t.json :images
       t.integer :businessman_id
       t.timestamps
     end

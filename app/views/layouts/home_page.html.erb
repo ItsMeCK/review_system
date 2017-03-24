@@ -8,11 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-      <div style="background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/fa8d73b85ad8/assets/img/home/hero_photos/J4bBEXXBIHmYLl50X1l72g.jpg) ;
-top: 0px; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; background-size: 100% 100%;"> 
-
-
+  <body class="home_page" >
+      <div class="homepgae_back"> 
       <%= if current_reviewer 
         button_to "Sign Out", destroy_reviewer_session_path ,method: 'delete', class: "btn btn-primary-outline1"
       else
@@ -26,13 +23,12 @@ top: 0px; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; ba
         button_to "Sign In", new_reviewer_session_path ,method: 'get', class: "btn btn-primary-outline2"
       end  
         %>
-
-       <%= %>
-      
+      </div>
+      <div class= "container">
       <%= yield %>
-
       </div>
       <div>
+
       <footer class="footer">
         <small>
           All Right Reserved!!!
@@ -49,24 +45,7 @@ top: 0px; background-repeat: no-repeat; top: 0px; height: 500px; width: 100%; ba
   </body>
   <style type="text/css">
     
-    .btn-primary-outline1 {
-  background-color: transparent;
-  border-color: #FFFFFF;
-  border-width: 2px;
-  color: #FFFFFF;
- position: absolute;
- right: 4px;
-
-}
-
-.btn-primary-outline2 {
-  background-color: transparent;
-  border-width: 0px;
-  color: #FFFFFF;
-position: absolute;
- right: 100px; 
-
-}
+    
 
   </style>
 

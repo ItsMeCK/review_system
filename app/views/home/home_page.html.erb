@@ -10,3 +10,51 @@
 <input class="btn btn-primary" type="submit" value="Submit">
 
 </div>
+
+
+<h1>Products</h1>
+
+
+<br>
+
+  <% @products.each do |product| %>
+  <div class="polaroid" >
+    <img src= <%= product.images.first %> alt="Norway" style="width:100%;height: 180px;  border: 1px solid grey;border-bottom: none;border-radius: 25px;">
+    <div style="padding: 10px; text-align: left; border: 1px solid grey;border-radius: 25px;">
+      <%= link_to "#{product.name}", product %> <br>
+      <%= product.address %> <br>
+      <%= product.city %> 
+      <%= link_to 'Add Review', new_review_path(product: product.id) %>
+    </div>
+  </div>
+
+  <%end%>
+
+
+
+<style type="text/css">
+  
+
+ 
+ 
+ div.polaroid {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  width: 300px;
+  height: 250px
+  
+  text-align: center;
+  
+  flex-grow: 1;
+  width: 33%;
+}
+}
+
+div.container {
+
+  padding: 10px;
+}
+</style>

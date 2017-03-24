@@ -31,6 +31,11 @@
     <%= f.text_field :city %>
   </div>
 
+   <div class="field">
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+
   <div class="field">
     <%#= f.label :type_id %>
     <%#= f.number_field :type_id %>

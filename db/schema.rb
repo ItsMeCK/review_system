@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321061344) do
+ActiveRecord::Schema.define(version: 20170324084312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20170321061344) do
     t.string   "phone"
     t.string   "city"
     t.integer  "product_type_id"
-    t.string   "image"
+    t.json     "images"
     t.integer  "businessman_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -88,6 +88,18 @@ ActiveRecord::Schema.define(version: 20170321061344) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_reviewers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_reviewers_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.string   "title"
+    t.text     "content"
+    t.decimal  "rating"
+    t.json     "images"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.json     "photos"
   end
 
 end

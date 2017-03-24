@@ -1,3 +1,37 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-primary-outline1 {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  color: #FFFFFF;
+ position: absolute;
+ right: 4px;
+
+}
+
+.btn-primary-outline2 {
+  background-color: transparent;
+  border-width: 0px;
+  color: #FFFFFF;
+position: absolute;
+ right: 100px; 
+
+}
+
+.home_page{
+      padding-top: 0px;
+
+}
+
+.homepgae_back{
+  background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/b214c3715517/assets/img/home/hero_photos/mBTG70TAjqcIovSuFMalDQ.jpg);
+  top: 0px; 
+  background-repeat: no-repeat; 
+  height: 600px; 
+  width: 100%; 
+  background-size: cover; 
+  background-position: center center; 
+  padding-top: 30px;
+}
