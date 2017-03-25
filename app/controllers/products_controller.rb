@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if current_businessman
       return 'businessman'
     else
-      return 'home_page'
+      return 'application'
     end  
   end  
   
@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @reviews = @product.reviews
   end
 
   # GET /products/new
