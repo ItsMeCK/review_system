@@ -1,3 +1,4 @@
+
 <div class="form_center" style="width:80%;display:flex; position: absolute; left: 20px; top: 400px;">
 <div class="input-group" style="width:50%">
   <span class="input-group-addon" id="basic-addon1">Find</span>
@@ -11,27 +12,27 @@
 
 </div>
 
-
+<div class="w3-main w3-content w3-padding" style="max-width:960px">
 <h1>Products</h1>
+    <div class="w3-row-padding w3-padding-16 " id="food">
+      <% @products.each do |product| %>
 
+       <div class="w3-quarter">
+          <div class="w3-border w3-round-large" style="-webkit-box-shadow: 0 8px 6px -6px  #999;
+     -moz-box-shadow: 0 8px 6px -6px  #999;
+          box-shadow: 0 8px 6px -6px #999;">
+        <img class="w3-round-large" src= <%= product.images.first %> alt="Norway" style="width:100%; height: 180px;">
+        <h4 style="margin-left: 10px;"> <%= link_to "#{product.name.upcase_first}", product ,:style=> 'color:#0073bb; font-weight: bold;' %></h4>
+        <p style="margin-left: 10px;"><%= product.city %></p>
+       </div>
+       <br>
+       <br>
+       </div>
 
-<br>
-<body style="width: 200px, height: 100%">
-  <% @products.each do |product| %>
-  <div class="polaroid" >
-    <img src= <%= product.images.first %> alt="Norway" style="width:100%;height: 180px; ">
-    <div style="padding: 10px; text-align: left;">
-      <p> <%= link_to "#{product.name}", product %> </p>
-      
-      <%= product.address %> <br>
-      <%= product.city %> 
-      <%= link_to 'Add Review', new_review_path(product: product.id) %>
-    </div>
-  </div>
+      <%end%>
+    </div> 
 
-  <%end%>
-
-</body>
+</div>
 
 <style type="text/css">
  div.polaroid {
