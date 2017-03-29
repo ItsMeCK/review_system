@@ -57,11 +57,14 @@
 <% @reviews.each do |review| %>
 
   <li style="border-bottom: 1px solid #ff0000;">
-  <h2 style="text-align: left;  font-weight: bold; color:#0073bb;  font-size: 100%;"><%= review.reviewer.name %></h2>
+  <h2 style="text-align: left;  font-weight: bold; color:#0073bb;  font-size: 100%;">
+<%= link_to review.reviewer.name , reviewer_path(review.reviewer) %>
+  </h2><h3 style="float: right;"> <%= link_to 'View Review', review_path(review) %>
   <h2 style="text-align: left;  font-weight: bold; color:#0073bb;  font-size: 100%;"><%= review.title %></h2>
   <p ><%= review.content %></p>
-
-</li>
+  
+   </h3>
+  </li>
 <%end%>
 
 </ul>
